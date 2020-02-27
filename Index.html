@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        h2 {
+            padding-left: 100px;
+        }
+    </style>
+</head>
+<body>
+<h2>Từ điển Anh-Việt</h2>
+<input type="text" value="" id="intoVi">
+<input type="button" value="Dịch" onclick="transEnglish()">
+<input type="text" value="" id="intoEn">
+<input type="button" value="Translate" onclick="transVietnamese()">
+    <script>
+        let vietnamese  = ["Một", "Hai", "Ba", "Bốn", "Năm", "Sáu", "Bảy", "Tám", "Chín", "Mười"];
+        let english = ["One", "Two", "There", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"];
+
+        function transEnglish() {
+            let text = document.getElementById("intoVi"). value;
+            for (let i = 0; i < vietnamese.length; i++) {
+                if (vietnamese[i] == text) {
+                    document.getElementById("intoEn"). value = english[i];
+                    break;
+                } else {
+                    document.getElementById("intoEn"). value = "Không dịch được";
+                }
+
+            }
+        }
+
+        function transVietnamese() {
+            let text = document.getElementById("intoEn"). value;
+            for (let i = 0; i < english.length ; i++) {
+                if (english[i] == text) {
+                document.getElementById("intoVi"). value = vietnamese[i];
+                break;
+            } else {
+                    document.getElementById("intoVi"). value = " No Idea";
+                    }
+                }
+
+            }
+    </script>
+</body>
+</html>
